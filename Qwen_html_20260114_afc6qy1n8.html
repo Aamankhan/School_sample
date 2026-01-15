@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekta Public School | Quality Education for Holistic Development</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #3a7bd5;
+            --secondary-blue: #4e9af1;
+            --light-yellow: #fff9e6;
+            --soft-yellow: #ffefcc;
+            --light-gray: #f8f9fa;
+            --dark-blue: #1a3c6c;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-light: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+        
+        .logo-text span {
+            color: var(--secondary-blue);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+        
+        nav a.active {
+            color: var(--primary-blue);
+        }
+        
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-blue);
+            border-radius: 3px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 140px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23fff" opacity="0.1"/></svg>') no-repeat;
+            background-size: contain;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .hero-text {
+            flex: 1;
+        }
+        
+        .hero-text h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            line-height: 1.2;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-blue);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--white);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            margin-left: 15px;
+            border: 2px solid var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-blue);
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--light-yellow);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-blue);
+            border-radius: 2px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--light-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-blue);
+            font-size: 2rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .about-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-blue);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-blue);
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            color: var(--secondary-blue);
+            margin-top: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content, .about-content {
+                flex-direction: column;
+            }
+            
+            .hero-text, .about-text, .hero-image, .about-image {
+                width: 100%;
+            }
+            
+            .hero-text {
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                background: var(--white);
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: clip-path 0.4s ease-in-out;
+            }
+            
+            nav ul.show {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+        
+        /* Page Content Styling */
+        .page-content {
+            padding: 100px 0 60px;
+            display: none;
+        }
+        
+        .page-content.active {
+            display: block;
+        }
+        
+        .content-section {
+            margin-bottom: 50px;
+        }
+        
+        .content-section h2 {
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+        
+        .content-section p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .admission-steps {
+            counter-reset: step-counter;
+            margin-top: 30px;
+        }
+        
+        .step {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 30px;
+            padding-top: 10px;
+        }
+        
+        .step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 200px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 30px 0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: var(--secondary-blue);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-text">Ekta <span>Public School</span></div>
+            </div>
+            <button class="mobile-menu-btn" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="about">About Us</a></li>
+                    <li><a href="#" class="nav-link" data-page="academics">Academics</a></li>
+                    <li><a href="#" class="nav-link" data-page="admissions">Admissions</a></li>
+                    <li><a href="#" class="nav-link" data-page="facilities">Facilities</a></li>
+                    <li><a href="#" class="nav-link" data-page="gallery">Gallery</a></li>
+                    <li><a href="#" class="nav-link" data-page="contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <section id="home" class="page-content active">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>Nurturing Young Minds for a Brighter Future</h1>
+                    <p>At Ekta Public School, we provide quality education in a safe, nurturing environment that fosters holistic development and lifelong learning.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn nav-link" data-page="admissions">Admissions Open</a>
+                        <a href="#" class="btn btn-secondary nav-link" data-page="about">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='400' viewBox='0 0 500 400'><rect width='500' height='400' fill='%23e0f0ff'/><circle cx='250' cy='200' r='120' fill='%234e9af1' opacity='0.2'/><path d='M150,250 Q250,150 350,250' stroke='%233a7bd5' stroke-width='8' fill='none' stroke-linecap='round'/><circle cx='200' cy='220' r='25' fill='%23fff'/><circle cx='300' cy='220' r='25' fill='%23fff'/></svg>" alt="Happy students at Ekta Public School">
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Why Choose Ekta Public School?</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>Experienced Faculty</h3>
+                        <p>Our dedicated teachers are experts in their fields with years of experience in nurturing young minds.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Quality Education</h3>
+                        <p>Comprehensive curriculum aligned with national standards to ensure academic excellence.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <h3>Modern Facilities</h3>
+                        <p>State-of-the-art infrastructure including smart classrooms, science labs, and sports facilities.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Holistic Development</h3>
+                        <p>We focus on the overall growth of students through academics, arts, sports, and values.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Preview -->
+        <div class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About Ekta Public School</h2>
+                        <p>Established in 2005, Ekta Public School has been a beacon of quality education in our community. We believe in creating an environment where every child can thrive academically, socially, and emotionally.</p>
+                        <p>Our mission is to develop well-rounded individuals who are not only academically proficient but also possess strong moral values and social responsibility.</p>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">18+</div>
+                                <div>Years of Excellence</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">1200+</div>
+                                <div>Happy Students</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">85+</div>
+                                <div>Dedicated Staff</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='400' viewBox='0 0 500 400'><rect width='500' height='400' fill='%23f0f8ff'/><rect x='50' y='50' width='400' height='300' rx='20' fill='%23ffffff'/><circle cx='150' cy='150' r='40' fill='%234e9af1' opacity='0.3'/><circle cx='350' cy='150' r='40' fill='%233a7bd5' opacity='0.3'/><rect x='100' y='250' width='300' height='80' rx='10' fill='%23fff9e6'/></svg>" alt="School building">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Page -->
+    <section id="about" class="page-content">
+        <div class="container">
+            <div class="content-section">
+                <h2>About Ekta Public School</h2>
+                <p>Ekta Public School was founded in 2005 with a vision to provide quality education that nurtures the intellectual, physical, emotional, and social development of every child. Located in the heart of the city, our school has grown to become one of the most respected educational institutions in the region.</p>
+                <p>Our philosophy is centered around the belief that every child is unique and deserves an education that helps them discover their potential and develop into confident, compassionate, and responsible citizens.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2>Our Mission & Vision</h2>
+                <p><strong>Vision:</strong> To be a premier educational institution that empowers students to become lifelong learners and responsible global citizens.</p>
+                <p><strong>Mission:</strong> To provide a stimulating and supportive learning environment that fosters academic excellence, character development, creativity, and critical thinking.</p>
+            </div>
+            
+            <div class="content-section">
+                <h2>Leadership Team</h2>
+                <p>Our school is led by a team of experienced educators and administrators who are passionate about providing the best possible education for our students.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+                    <div style="flex: 1; min-width: 250px; background: var(--light-yellow); padding: 20px; border-radius: 10px;">
+                        <h3>Dr. Anjali Sharma</h3>
+                        <p><em>Principal</em></p>
+                        <p>With over 25 years of experience in education, Dr. Sharma leads our school with a focus on innovative teaching methodologies and student-centered learning.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 250px; background: var(--light-yellow); padding: 20px; border-radius: 10px;">
+                        <h3>Mr. Rajiv Mehta</h3>
+                        <p><em>Vice Principal</em></p>
+                        <p>Mr. Mehta oversees academic programs and ensures our curriculum meets the highest standards of excellence and relevance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academics Page -->
+    <section id="academics" class="page-content">
+        <div class="container">
+            <div class="content-section">
+                <h2>Academic Programs</h2>
+                <p>At Ekta Public School, we offer a comprehensive curriculum that balances academic rigor with creative exploration. Our programs are designed to meet the diverse needs of our students while preparing them for future success.</p>
+            </div>
+            
+            <div class="content-section">
+                <h3>Curriculum Framework</h3>
+                <p>We follow the National Curriculum Framework with enhancements that incorporate 21st-century skills. Our curriculum emphasizes:</p>
+                <ul style="margin-left: 20px; margin-top: 15px;">
+                    <li>Critical thinking and problem-solving</li>
+                    <li>Communication and collaboration</li>
+                    <li>Creativity and innovation</li>
+                    <li>Digital literacy</li>
+                    <li>Global awareness</li>
+                </ul>
+            </div>
+            
+            <div class="content-section">
+                <h3>Academic Departments</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div style="background: var(--light-yellow); padding: 20px; border-radius: 10px;">
+                        <h4>Languages</h4>
+                        <p>English, Hindi, Sanskrit, and French with emphasis on reading, writing, and communication skills.</p>
+                    </div>
+                    <div style="background: var(--light-yellow); padding: 20px; border-radius: 10px;">
+                        <h4>Mathematics</h4>
+                        <p>Conceptual understanding, problem-solving, and real-world applications.</p>
+                    </div>
+                    <div style="background: var(--light-yellow); padding: 20px; border-radius: 10px;">
+                        <h4>Science</h4>
+                        <p>Hands-on experiments, scientific inquiry, and environmental awareness.</p>
+                    </div>
+                    <div style="background: var(--light-yellow); padding: 20px; border-radius: 10px;">
+                        <h4>Social Studies</h4>
+                        <p>History, geography, civics, and economics with a focus on critical analysis.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Assessment & Evaluation</h3>
+                <p>We use a continuous and comprehensive evaluation system that includes:</p>
+                <ul style="margin-left: 20px; margin-top: 15px;">
+                    <li>Formative assessments (projects, presentations, quizzes)</li>
+                    <li>Summative assessments (term exams)</li>
+                    <li>Portfolio assessments</li>
+                    <li>Peer and self-assessments</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions Page -->
+    <section id="admissions" class="page-content">
+        <div class="container">
+            <div class="content-section">
+                <h2>Admissions Process</h2>
+                <p>Welcome to Ekta Public School! We are delighted that you are considering our school for your child's education. Our admissions process is designed to be simple and transparent.</p>
+            </div>
+            
+            <div class="content-section">
+                <h3>Admission Guidelines</h3>
+                <p>Admissions are open for classes Nursery to Grade XII. The academic year begins in April. We admit students throughout the year based on seat availability.</p>
+                <p><strong>Age Criteria:</strong> As per CBSE guidelines</p>
+            </div>
+            
+            <div class="content-section">
+                <h3>Admission Steps</h3>
+                <div class="admission-steps">
+                    <div class="step">
+                        <h4>Registration</h4>
+                        <p>Complete the online registration form and pay the registration fee.</p>
+                    </div>
+                    <div class="step">
+                        <h4>Interaction Session</h4>
+                        <p>Attend an interaction session with the school counselor (for parents) and assessment (for students).</p>
+                    </div>
+                    <div class="step">
+                        <h4>Document Submission</h4>
+                        <p>Submit required documents including birth certificate, previous school records, and photographs.</p>
+                    </div>
+                    <div class="step">
+                        <h4>Fee Payment</h4>
+                        <p>Pay the admission and annual fees to confirm your child's seat.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Required Documents</h3>
+                <ul style="margin-left: 20px; margin-top: 15px;">
+                    <li>Birth certificate</li>
+                    <li>Previous school leaving certificate (for Grade I and above)</li>
+                    <li>Report card of the previous class</li>
+                    <li>Four passport-sized photographs of the child</li>
+                    <li>Two passport-sized photographs of parents</li>
+                    <li>Aadhaar card of child and parents</li>
+                </ul>
+            </div>
+            
+            <div class="content-section">
+                <a href="#" class="btn" style="display: inline-block;">Download Admission Form</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Page -->
+    <section id="facilities" class="page-content">
+        <div class="container">
+            <div class="content-section">
+                <h2>World-Class Facilities</h2>
+                <p>Ekta Public School provides state-of-the-art infrastructure and facilities to support the holistic development of our students.</p>
+            </div>
+            
+            <div class="content-section">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px;">
+                    <div>
+                        <h3>Smart Classrooms</h3>
+                        <p>Interactive digital boards, audio-visual equipment, and comfortable furniture create an engaging learning environment.</p>
+                    </div>
+                    <div>
+                        <h3>Science Laboratories</h3>
+                        <p>Well-equipped labs for Physics, Chemistry, and Biology with modern apparatus for hands-on experiments.</p>
+                    </div>
+                    <div>
+                        <h3>Computer Labs</h3>
+                        <p>Advanced computer labs with high-speed internet and latest software for IT education.</p>
+                    </div>
+                    <div>
+                        <h3>Library</h3>
+                        <p>Extensive collection of books, journals, and digital resources to foster a love for reading and research.</p>
+                    </div>
+                    <div>
+                        <h3>Sports Facilities</h3>
+                        <p>Playgrounds for cricket, football, basketball, and indoor games like table tennis and chess.</p>
+                    </div>
+                    <div>
+                        <h3>Auditorium</h3>
+                        <p>Spacious auditorium with modern acoustics for assemblies, performances, and events.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Additional Amenities</h3>
+                <ul style="margin-left: 20px; margin-top: 15px; columns: 2; column-gap: 40px;">
+                    <li>Medical room with trained staff</li>
+                    <li>Purified drinking water stations</li>
+                    <li>Safe and secure campus with CCTV surveillance</li>
+                    <li>Transportation services with GPS-enabled buses</li>
+                    <li>Cafeteria serving nutritious meals</li>
+                    <li>Art and music studios</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Page -->
+    <section id="gallery" class="page-content">
+        <div class="container">
+            <div class="content-section">
+                <h2>School Gallery</h2>
+                <p>Explore moments from our vibrant school life - from classroom activities to sports events and cultural celebrations.</p>
+            </div>
+            
+            <div class="gallery">
+                <div class="gallery-item">Classroom Learning</div>
+                <div class="gallery-item">Science Lab</div>
+                <div class="gallery-item">Annual Function</div>
+                <div class="gallery-item">Sports Day</div>
+                <div class="gallery-item">Art Workshop</div>
+                <div class="gallery-item">Field Trip</div>
+                <div class="gallery-item">Library</div>
+                <div class="gallery-item">Computer Lab</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Page -->
+    <section id="contact" class="page-content">
+        <div class="container">
+            <div class="content-section">
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you! Reach out to us with any questions about our school, admissions, or programs.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                <div>
+                    <h3>Get In Touch</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Education Avenue, Knowledge City, KC 100001</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 123 456 7890</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@ektapublicschool.edu.in</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Monday-Friday: 8:00 AM - 3:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Send us a Message</h3>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" required>
+                                <option value="">Select Subject</option>
+                                <option value="admission">Admission Inquiry</option>
+                                <option value="academic">Academic Question</option>
+                                <option value="general">General Information</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Ekta Public School</h3>
+                    <p>Providing quality education since 2005, fostering holistic development in a safe and nurturing environment.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="about">About Us</a></li>
+                        <li><a href="#" class="nav-link" data-page="academics">Academics</a></li>
+                        <li><a href="#" class="nav-link" data-page="admissions">Admissions</a></li>
+                        <li><a href="#" class="nav-link" data-page="facilities">Facilities</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Education Avenue, Knowledge City</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 123 456 7890</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@ektapublicschool.edu.in</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Ekta Public School. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Navigation functionality
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pages = document.querySelectorAll('.page-content');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Update active link
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                // Show selected page
+                const pageId = link.getAttribute('data-page');
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                    if (page.id === pageId) {
+                        page.classList.add('active');
+                    }
+                });
+                
+                // Close mobile menu if open
+                navMenu.classList.remove('show');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
